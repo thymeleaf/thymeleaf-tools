@@ -6,17 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class HTMLizer {
+public class XmlHTMLizer {
 
-    private static final String[] RESERVED_WORDS =
-        new String[] {
-            "return", "new", "public", "static", "final", "void", "synchronized",
-            "class", "enum", "private", "protected", "import", "package",
-            "try", "catch", "finally", "for", "while", "switch", "case",
-            "byte", "short", "int", "long", "float", "double", "boolean",
-            "extends", "implements", "super", "true", "false"
-        };
-    
     private static final Map<String,String> ESCAPE_MAPS = createEscapeMaps();
     
     
@@ -65,32 +56,28 @@ public class HTMLizer {
     }
     
     
-    private static String formatReservedWords(final String text) {
+
+    
+    private static String formatTags(final String text) {
         
         String result = text;
         
-        for (final String reservedWord : RESERVED_WORDS) {
-            result = result.replaceAll("(\\W)("+reservedWord+")(\\W)", "$1<b>$2</b>$3");
-        }
+        final Pattern tagPattern = Pattern.compile("&lt;(.*?)(&nbsp;|&gt;)");
+        final Matcher tagMatcher = tagPattern.matcher(result);
+        result = tagMatcher.replaceAll("&lt;<b>$1</b>$2");
         
         return result;
         
     }
-
+    
+    
+    
     
     private static String formatComments(final String text) {
+
+        // TODO Format comments!!
         
-        String result = text;
-        
-        final Pattern multilineCommentPattern = Pattern.compile("\\/\\*(.*?)\\*\\/", Pattern.DOTALL);
-        final Matcher multilineCommentMatcher = multilineCommentPattern.matcher(result);
-        result = multilineCommentMatcher.replaceAll("<span class=\"comment\">/*$1*/</span>");
-        
-        final Pattern singlelineCommentPattern = Pattern.compile("\\/\\/(.*?)<br \\/>", Pattern.DOTALL);
-        final Matcher singlelineCommentMatcher = singlelineCommentPattern.matcher(result);
-        result = singlelineCommentMatcher.replaceAll("<span class=\"comment\">//$1</span><br />");
-        
-        return result;
+        return text;
         
     }
     
@@ -113,9 +100,9 @@ public class HTMLizer {
     public static String htmlize(final String text) {
         
         String result = text;
-        
+
         result = htmlEscape(result);
-        result = formatReservedWords(result);
+        result = formatTags(result);
         result = formatComments(result);
         result = formatStrings(result);
         
@@ -124,7 +111,7 @@ public class HTMLizer {
     }
     
     
-    private HTMLizer() {
+    private XmlHTMLizer() {
         super();
     }
     

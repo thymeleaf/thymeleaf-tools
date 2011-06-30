@@ -11,15 +11,26 @@
     </session-config>
 
     <servlet>
-      <servlet-name>htmlize</servlet-name>
-      <servlet-class>org.thymeleaf.tools.htmlizer.HTMLizeServlet</servlet-class>
+      <servlet-name>javahtmlize</servlet-name>
+      <servlet-class>org.thymeleaf.tools.htmlizer.JavaHTMLizeServlet</servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+      <servlet-name>xmlhtmlize</servlet-name>
+      <servlet-class>org.thymeleaf.tools.htmlizer.XmlHTMLizeServlet</servlet-class>
       <load-on-startup>1</load-on-startup>
     </servlet>
 
 
     <servlet-mapping>
-      <servlet-name>htmlize</servlet-name>
-      <url-pattern>/htmlize</url-pattern>
+      <servlet-name>javahtmlize</servlet-name>
+      <url-pattern>/javahtmlize</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>xmlhtmlize</servlet-name>
+      <url-pattern>/xmlhtmlize</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

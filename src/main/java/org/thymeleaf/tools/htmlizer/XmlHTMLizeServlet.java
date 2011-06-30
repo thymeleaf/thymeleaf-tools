@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HTMLizeServlet extends HttpServlet {
+public class XmlHTMLizeServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1662057535239464670L;
+    private static final long serialVersionUID = -5695575628711093471L;
 
-    
-    
-    public HTMLizeServlet() {
+
+
+    public XmlHTMLizeServlet() {
         super();
     }
 
@@ -26,7 +26,7 @@ public class HTMLizeServlet extends HttpServlet {
         
         final String text = req.getParameter("text");
         
-        final String htmlized = HTMLizer.htmlize(text);
+        final String htmlized = XmlHTMLizer.htmlize(text);
         
         resp.setContentType("text/html");
         
