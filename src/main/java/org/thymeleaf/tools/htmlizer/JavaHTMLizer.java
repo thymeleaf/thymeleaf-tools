@@ -14,7 +14,7 @@ public class JavaHTMLizer {
             "class", "enum", "private", "protected", "import", "package",
             "try", "catch", "finally", "for", "while", "switch", "case",
             "byte", "short", "int", "long", "float", "double", "boolean",
-            "extends", "implements", "super", "true", "false"
+            "extends", "implements", "super", "true", "false", "this"
         };
     
     private static final Map<String,String> ESCAPE_MAPS = createEscapeMaps();
