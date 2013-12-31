@@ -12,8 +12,11 @@ curl -k -u "$2:$3" -d "{\"name\":\"status:done\",\"color\":\"20a820\"}" https://
 curl -k -u "$2:$3" -d "{\"name\":\"status:feedback\",\"color\":\"a0cbd5\"}" https://api.github.com/repos/thymeleaf/$1/labels
 curl -k -u "$2:$3" -d "{\"name\":\"status:inprogress\",\"color\":\"fef2c0\"}" https://api.github.com/repos/thymeleaf/$1/labels
 curl -k -u "$2:$3" -d "{\"name\":\"status:pending\",\"color\":\"e0d8c7\"}" https://api.github.com/repos/thymeleaf/$1/labels
-curl -k -u "$2:$3" -d "{\"name\":\"status:released\",\"color\":\"20a820\"}" https://api.github.com/repos/thymeleaf/$1/labels
+curl -k -u "$2:$3" -d "{\"name\":\"status:published\",\"color\":\"20a820\"}" https://api.github.com/repos/thymeleaf/$1/labels
 curl -k -u "$2:$3" -d "{\"name\":\"status:solved\",\"color\":\"20a820\"}" https://api.github.com/repos/thymeleaf/$1/labels
 curl -k -u "$2:$3" -d "{\"name\":\"status:insnapshot\",\"color\":\"bfe5bf\"}" https://api.github.com/repos/thymeleaf/$1/labels
 curl -k -u "$2:$3" -d "{\"name\":\"status:underevaluation\",\"color\":\"d4c5f9\"}" https://api.github.com/repos/thymeleaf/$1/labels
+curl -k -u "$2:$3" -d "{\"name\":\"status:written\",\"color\":\"bfe5bf\"}" https://api.github.com/repos/thymeleaf/$1/labels
+
+curl -k -u "$2:$3" -d "{\"name\":\"priority:high\",\"color\":\"fa3d51\"}" https://api.github.com/repos/thymeleaf/$1/labels
 
