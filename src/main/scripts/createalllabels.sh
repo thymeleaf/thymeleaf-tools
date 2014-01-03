@@ -20,3 +20,5 @@ curl -k -u "$2:$3" -d "{\"name\":\"status:written\",\"color\":\"bfe5bf\"}" https
 
 curl -k -u "$2:$3" -d "{\"name\":\"priority:high\",\"color\":\"fa3d51\"}" https://api.github.com/repos/thymeleaf/$1/labels
 
+curl -k -u "$2:$3" -d "{\"name\":\"contrib:open\",\"color\":\"405a40\"}" https://api.github.com/repos/thymeleaf/$1/labels
+
